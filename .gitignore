@@ -1,0 +1,13 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.terraform.lock.hcl
+
+# Terraform provider plugins
+.terraform/
+
+# VSCode specific files
+.vscode/
+
+logs/
