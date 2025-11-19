@@ -99,8 +99,11 @@ resource "aws_instance" "wireguard_server" {
               [Interface]
               Address = 10.0.0.1/24
               SaveConfig = true
-              PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-              PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+              PostUp = iptables -A FORWARD -i %i -j ACCEPT; \
+                      iptables -t nat -A POSTROUTING -o $(ip route get 1.1.1.1 | awk '{print $5; exit}') -j MASQUERADE
+              PostDown = iptables -D FORWARD -i %i -j ACCEPT; \
+                      iptables -t nat -D POSTROUTING -o $(ip route get 1.1.1.1 | awk '{print $5; exit}') -j MASQUERADE
+
               ListenPort = 51820
               PrivateKey = $(cat /etc/wireguard/server_private_key)
 
