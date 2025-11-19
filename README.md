@@ -21,7 +21,7 @@
 ████████████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████████████
 ```
-This project uses Terraform to quickly deploy a personal WireGuard VPN server on an AWS EC2 instance. It's designed to be simple to set up and manage.
+This project uses Terraform to quickly deploy a personal WireGuard VPN server on an AWS EC2 instance(Free Tier Friendly). It's designed to be simple to set up and manage.
 
 ## What this does
 
@@ -35,7 +35,7 @@ This project uses Terraform to quickly deploy a personal WireGuard VPN server on
 
 Before you begin, make sure you have the following:
 
-*   **AWS Account**: You'll need an AWS account to create the resources.
+*   **AWS Account**: You'll need an AWS account to create the resources.(Free Tier Friendly)
 *   **AWS CLI**: The [AWS Command Line Interface](https://aws.amazon.com/cli/) installed and configured with your credentials. You can configure it by running `aws configure`.
 *   **Terraform**: [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) must be installed on your local machine.
 *   **An EC2 Key Pair**: You need an [EC2 Key Pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in your AWS account to be able to connect to the EC2 instance via SSH.
